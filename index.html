@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HELLO, heejung's market</title>
+<link rel="stylesheet" href="./w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+     function tableprint(){
+            let text='';
+            text = `<table class="w3-table-all w3-hoverable"><tr class="w3-blue"><th> 작가명</th><th>작품</th><th>가격</th></tr>`;
+            for(let i =0; i<data.length; i++){
+                text+=`<tr><td>${data[i][0]}</td>
+                    <td><img src=${data[i][1]} onclick="onClick(this)"></td>
+                    <td>${data[i][2]}</td></tr>`;
+            }
+            
+            text+= `</table>`;
+                document.getElementById("productList").innerHTML=text;
+           }
+           function fileUpload(){
+               let a = new Array();
+               let clothes = document.getElementById("clothes").value;
+               let file = "./images/" + document.getElementById("file").files[0].name;
+               let price = parseInt(document.getElementById("price").value);
+               a[0] = clotesname;
+               a[1]= file;
+               a[2] = price;
+               data.push(a);
+               console.log(data);
+           }
+           function popup(){
+               //window.open("팝업소스파일","별명","스타일설정")
+               window.open("event.html", "이벤트", "width:700, height=900, scrollbars=yes");
+
+           }
+           function f(){
+               photo.height=photo.height*2;
+               photo.width= photo.width*2;
+           }
+           function g(){
+                photo.height=photo.height/2;
+               photo.width= photo.width/2;
+           }
+
+           let data = [["홍길동", "./images/photo11.jpg", 5000],
+                    ["이순신", "./images/photo21.jpg", 10000],
+                    ["성춘향", "./images/photo31.jpg", 15000],
+                    ["최동원", "./images/photo41.jpg", 5000]]
+           function tableprint(){
+            let text='';
+            text = `<table class="w3-table-all w3-hoverable"><tr class="w3-blue"><th> 작가명</th><th>작품</th><th>가격</th></tr>`;
+            for(let i =0; i<data.length; i++){
+                text+=`<tr><td>${data[i][0]}</td>
+                    <td><img src=${data[i][1]} onclick="onClick(this)"></td>
+                    <td>${data[i][2]}</td></tr>`;
+            }
+            text+= `</table>`;
+                document.getElementById("productList").innerHTML=text;
+           }
+           function fileUpload(){
+               let a = new Array();
+               let author = document.getElementById("author").value;
+               let file = "./images/" + document.getElementById("file").files[0].name;
+               let price = parseInt(document.getElementById("price").value);
+               a[0] = author;
+               a[1]= file;
+               a[2] = price;
+               data.push(a);
+               console.log(data);
+           }
+</script>
+<style>
+  body{width: 950px; margin: 0 auto;  text-align: center; height: 500px;}
+  *{font-family: "돋움"Arial, Helvetica, sans-serif; line-height: 150%;}
+  li{list-style: none;}
+  a{text-decoration: none;}
+  small ul li:hover{text-align: right;}
+  body{ display:flex;}
+    article{ height:100%;}
+    aside{height:100%;}
+    article{ flex:3;}
+    aside{ flex:1;}
+</style>
+</head>
+
+<div id="page">
+<header class="w3-container w3-margin-top">
+   <span class="w3-xlarge"></span>
+   <div class="small navi">
+    <ul class="w3-bar w3-center" style="border:2px solid hsla(9, 100%, 64%, 0.4); color:grey;" >
+        <li class="w3-bar-item w3-padding-small w3-center"><a href="midterm.html">로그인</a></li>
+        <li class="w3-bar-item w3-padding-small w3-center"><a href="sub04.html">회원가입</a></li>
+        <li class="w3-bar-item w3-padding-small w3-center"><a href="list1.html">장바구니 </a></li>
+        <li class="w3-bar-item w3-padding-small w3-center"><a href="sub05.html">쿠폰존 </a></li>
+        <li class="w3-bar-item w3-padding-small w3-center"><a href="callcenter.html">고객센터 </a></li>
+    </ul>
+  </div>
+  <br> <br>
+   <img src="./images/profile.jpg" alt=logo width="10%"> <br>
+   <a href="index.html" ><span class="w3-text indigo w3-xxlarge w3-text-shadow">Heejung's market</span></a>
+   <h5 class="w3-large"> 희정이의 애장품을 판매합니다 </h5>
+   <h5 class="w3-small"> 모든 수입금은 기부금으로 이용됩니다. </h5>
+   
+</header>
+<nav>
+    <!--.navi>ul>li*5>a[href="sub$$.html"]{menu_$$}-->
+  <div class="navi" >
+	<ul class="w3-container w3-center " style="background-color:hsla(9, 100%, 64%, 0.4);" >
+		<li class="w3-bar-item w3-button w3-padding-large w3-center"><a href="index.html">clothes</a></li> 
+		<li class="w3-bar-item w3-button w3-padding-large w3-center"><a href="index.html">products</a></li>
+		<li class="w3-bar-item w3-button w3-padding-large w3-center"><a href="index.html">photo</a></li>
+		<li class="w3-bar-item w3-button w3-padding-large w3-center"><a href="index.html">media</a></li>
+		<li class="w3-bar-item w3-button w3-padding-large w3-center"><a href="index.html">music</a></li>
+        <li class="w3-bar-item w3-button w3-padding-large w3-center"><a href="list.html">product list</a></li>
+	</ul>
+  </div>
+</nav>
+<body onload="tableprint(); popup();"></body>
+<div class="w3-cell-row"></div>
+<section class="w3-left w3-containerw3-panel w3-border w3-border-red w3-round-xxlarge" style="width:60%;">
+    <article class="package w3-large w3-text-indigo w3-margin-top"><h3>Clothes</h3> 	</article> 
+        <div class="w3-row" >
+            <table class=" w3-hoverable" style="width:100%;">
+                <tr style="background:hsla(9, 100%, 64%, 0.4);">
+                    <th id = ""> 사진</th>
+                    <th>설명</th>
+                    <th>금액</th>
+                
+                </tr>
+                <tr>
+                    <td ><img src="images/clothes1.jpg" style="width: 100px;"></td>
+                    <td> 오버핏 셔츠</td>
+                    <td> 19,000원   </td>
+                  
+                    
+                </tr>
+                    <tr>
+                        <td ><img src="images/clothes2.jpg" style="width: 100px;"></td>
+                        <td>청바지</td>
+                        <td>10,000원   </td>
+                        
+                    </tr>
+                    <tr>
+                        <td ><img src="images/clothes3.jpg" style="width: 100px;"></td>
+                        <td>오버핏 데일리 핑크 셔츠</td>
+                        <td>18,500원</td>
+                        
+                    </tr>
+                </tr>
+            </table>
+        </div>
+         
+	<article class="photo w3-large w3-text-indigo w3-margin-top" ><h3>Products</h3></article>
+    <div class="w3-row">
+        <table class=" w3-hoverable"  style="width:100%;">
+            <tr style="background:hsla(9, 100%, 64%, 0.4);">
+                <th> 상품</th>
+                <th>상품 설명</th>
+                <th>판매금액</th>
+            </tr>
+                <tr>
+                    <td ><img src="./images/product1.jpg" style="width: 150px;"></td>
+                    <td>JILL BY JILLSTUART <br> 반지갑</td>
+                    <td>80,000원</td>
+                </tr>
+                <tr>
+                    <td> <img src="./images/product2.jpg" style="width: 150px;" alt=""> </td>
+                    <td>랑방 에끌라 드 아르페쥬 <br> 우먼 오드퍼퓸 <br> 50ml</td>
+                    <td>30,000원</td>
+                </tr>
+                <tr>
+                    <td><img src="./images/product3.jpg" alt=""  style="width: 150px;"></td>
+                    <td>랜덤 히정이 포토사진</td>
+                    <td>10,000원</td>
+                </tr>
+            </tr>
+        </table>
+    </div>
+	  <br>
+    <article class="photo w3-large w3-text-indigo w3-margin-top" ><h3>Photo</h3></article>
+        <h4 class="w3-small"> 무료로 사진을 공유해요! <br> (단, 출처를 꼭 남겨주세요!)</h4>
+        <div class="w3-row">
+            <img  src="./images/photo1.jpg"  id="photo" alt="작품4" style="width: 30%;" onmouseover=f() onmouseout=g()>  &nbsp;
+            <img  src="./images/photo2.jpg"  alt="작품5" style="width: 30%;" />
+            <img  src="./images/photo3.jpg" alt="작품5" style="width: 30%;" />
+        </div>
+        <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+            <div class="w3-modal-content w3-animate-zoom">
+              <img id="img01" style="width:100%;">
+          </div>
+         </div>
+    <br>
+    <article class="media w3-large w3-text-indigo w3-margin-tops"><h3>Media</h3></article>
+        <h4 class="w3-small"> 무료로 동영상을 공유해요! <br> (단, 출처를 꼭 남겨주세요!)</h4>
+        <div class="w3-row">
+            <video class="w3-col s6 w3-border "  src="./images/media1.mp4" autoplay="True" controls="True"></video> 
+            <video class="w3-col s6 w3-border" src="./images/media2.mp4" autoplay="True" controls="True"></video>
+        </div> <br> <br>
+	<article class="package w3-large w3-text-indigo w3-margin-top"><h3>Music recommendation</h3> 	</article> 
+        <div class="w3-row">
+            <table class=" w3-hoverable">
+                <tr style="background:hsla(9, 100%, 64%, 0.4);">
+                    <th> 제목</th>
+                    <th>가수</th>
+                    <th>가사</th>
+                </tr>
+                    <tr>
+                        <td>나랑 아니면</td>
+                        <td>검정치마</td>
+                        <td> 나랑 아니면 누구랑 사랑할 수 있겠니 <br> 나랑 아니면
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>사랑 둘 </td>
+                        <td>김필</td>
+                        <td>사랑 참 못참았던 <br> 
+                            사랑 참 바보 같던   </td>
+                    </tr>
+                    <tr>
+                        <td>Emily</td>
+                        <td>Jeremy Zucker, Chelsea Culter</td>
+                        <td> I'll be the best thing for us <br>
+                            Then I'll fight with your friend</td>
+                    </tr>
+                </tr>
+            </table>
+        </div>
+	<br>
+</section>
+<aside class="w3-right w3-panel w3-border w3-border-red w3-round-xxlarge">
+    <br> 
+    <div id="aside-login">
+        <li class="w3-bar-item w3-container w3-button w3-padding-large w3-center" style="background-color:hsla(9, 100%, 64%, 0.4);">
+            <a href="midterm.html">로그인하러 가요!</a></li> 
+    </div>
+    <br> 
+    <div id="aside-list-1" >
+        <h4 class="w3-text-indigo ">나의 블로그 글</h4>
+                <ul class="text-align">
+                    <li><a href="https://blog.naver.com/acb4287/222405878480">블로그, 2월부터 6월까지</a></li> <br>
+                    <li><a href="https://blog.naver.com/acb4287/222247812256">블로그, [노래] Let Me Down Slow, <br> New Hope Club </a></li> <br>
+                    <li><a href="https://blog.naver.com/acb4287/222207586752">블로그, [노래] everything, 10cm</a></li> <br> 
+               </ul>
+    </div>
+	<div id="aside-list-2" >
+				<h4 class="w3-text-indigo">Q&A</h4>
+				<ul>
+					<li><a href="#">배송까지 걸리는 시간은 어떻게 되나요?</a></li> <br>
+					<li><a href="#">마이페이지창 리뉴얼되었나요?</a></li>
+					<li><a href="#"></a></li> <br>
+					<li><a href="#">모델 분 키가 어떻게 되나요?</a></li>
+                </ul>
+   </div>
+</aside>
+<footer>
+    <div class="w3-row">
+        <div class="w3-col s4  w3-container" >
+            <h5> Contact Us</h5>
+            <ul class="text-align">
+              <li>Phone: 010 4030 ****</li> <br>
+            </ul>
+        </div>  
+        <div class="w3-col s4  w3-container" >
+            <h5> Follow Us</h5>
+                <a href="https://www.instagram.com/be_winsome_/"><i class="fa fa-instagram" style="font-size:30px;color:black;"></i></a>
+                <a href="#"><i class="fa fa-facebook" style="font-size:30px;color:black;"></i></a> 
+            <br /><br/>
+            Copyright (c) 2021 Heejung<br/>
+		</div>
+		<div class="w3-col s4 w3-container" >
+			<h5> About Us</h5>
+			  <a href="#" class="btn btn-block btn-base btn-icon fa-check" ><span>Try it now</span></a>
+			
+		</div>
+    </div>
+</footer>
+</div>
+</body>
+</html>

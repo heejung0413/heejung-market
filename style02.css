@@ -1,0 +1,19 @@
+
+body{width: 950px; margin: 0 auto;  text-align: center;}
+header, footer, nav{
+    height:300px;
+    text-align: center;
+    font-size: 0.8em;
+}
+body{
+    display:flex;
+}
+article,aside{
+   height:300px;
+}
+article{
+    flex:3;
+}
+aside{
+    flex:1;
+}

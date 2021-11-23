@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./w3.css">
+    <title>Document</title>
+    <script>
+
+           function w3_open(){
+               document.getElementById("mySidebar").style.display = "block";
+           }
+           function w3_close(){
+               document.getElementById("mySidebar").style.display = "none";
+           }
+           let data = [["하늘", "./images/zoom5.jpg ", 500],
+                    ["배경", "./images/photo12.jpg", 100]]
+           function tableprint(){
+            let text='';
+            text = `<table class="w3-table-all w3-hoverable"><tr style="background-color:hsla(9, 100%, 64%, 0.4)"><th> 상품</th><th>사진</th><th>가격</th></tr>`;
+            for(let i =0; i<data.length; i++){
+                text+=`<tr><td>${data[i][0]}</td>
+                    <td><img src=${data[i][1]} onclick="onClick(this)"></td>
+                    <td>${data[i][2]}</td></tr>`;
+            }
+            text+= `</table>`;
+                document.getElementById("productList").innerHTML=text;
+           }
+           function fileUpload(){
+               let a = new Array();
+               let author = document.getElementById("author").value;
+               let file = "./images/" + document.getElementById("file").files[0].name;
+               let price = parseInt(document.getElementById("price").value);
+               a[0] = author;
+               a[1]= file;
+               a[2] = price;
+               data.push(a);
+               console.log(data);
+           }
+           function onclick(element){
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").styledisplay="block";
+           }
+           function popup(){
+               //window.open("팝업소스파일","별명","스타일설정")
+               window.open("popupevent.html", "이벤트", "width:50px, height=90px, scrollbars=yes");
+
+           }
+    </script>
+    <style>
+        body{width: 900px; text-align: center; margin: 0 auto;}
+    </style>
+</head>
+
+<body onload="tableprint(); popup(); ">
+
+    <header>
+        <!-- Sidebar -->
+        <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <a href="#" class="w3-bar-item w3-button">Link 1</a>
+            <a href="#" class="w3-bar-item w3-button">Link 2</a>
+            <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        </div>
+        <div style="border:2px solid hsla(9, 100%, 64%, 0.4); color:grey;" class="w3-center">
+            <button class="w3-button w3-xlarge"  onclick="w3_open()">☰</button>
+            <span class="w3-xlarge"> Heejung site</span>
+        </div>
+
+    </header>
+    <section>
+        <hr>
+        <div id="demo" class="w3-container">
+            <h2 class="w3-center"> 상품리스트 </h2>
+            <h3 class="w3-small"> 원하는 작품(동영상, 사진 등)이 있다면 같이 공유해요! </h3>
+            <div id="productList">
+
+            </div>
+        <div class="w3-container">
+            <h2>  상품 등록</h2>
+            저자명 : <input class="w3-input" style="border:2px solid hsla(9, 100%, 64%, 0.4);" type="text" name="" id="author"> <br>
+            사진 : <input class="w3-input" style="border:2px solid hsla(9, 100%, 64%, 0.4);" type="file" name="" id="file"> <br>
+            가격 : <input class="w3-input" style="border:2px solid hsla(9, 100%, 64%, 0.4);" type="text" name="" id="price"> <br>
+            <button class= "w3-button w3-center" style="background-color:hsla(9, 100%, 64%, 0.4)"onclick="fileUpload();"> 상품등록</button>
+            <button class= "w3-button w3-center" style="background-color:hsla(9, 100%, 64%, 0.4)" onclick="tableprint();"> 상품리스트에 추가하기</button>
+        </div>    
+        <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+            <div class="w3-modal-content w3-animate-zoom">
+              <img id="img01" style="width:100%;">
+          </div>
+         </div>
+
+
+    </section>
+
+</body>
+
+</html>
