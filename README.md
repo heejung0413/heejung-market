@@ -2,7 +2,7 @@
   <h1 align="center">웹 프로그래밍 전공 수업 자료 </h1>
 
   <p align="center">
-  <a href="https://heejung0413.github.io/heejung-market/" > <DEMO></a> 
+  <br/>웹 사이트는 <a href="https://heejung0413.github.io/heejung-market/">DEMO</a>에서 확인하실 수 있습니다.
   <br/>
  이 깃허브는 제가 대학교 2학년 때 '웹프로그래밍' 수업을 들으며 작성하였던 코드입니다.
     <br/>
