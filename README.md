@@ -19,9 +19,8 @@
 </p>
 
 ## Overview ⭐️
-</br> 
 <center><img src="https://github.com/heejung0413/heejung-market/blob/main/demo/login.png?raw=true" width="360" height="216"/> </center>
 - 로그인(id=admin, password=1234) 기능이 가능한  <a href="https://heejung0413.github.io/heejung-market/midterm.html"> 로그인 창 </a> 설계 
  <br/> (실제 회원가입은 불가능합니다. 회원가입 창만 설계한 상태입니다. )
-- 포트폴리오 작성을 위한 웹 페이지는 아니며, 수업을 통해 배우면서 작성한 것이기 때문에 기능들만 조금 참고해서 보시면 좋을 것 같습니다. 
+</br> - 포트폴리오 작성을 위한 웹 페이지는 아니며, 수업을 통해 배우면서 작성한 것이기 때문에 기능들만 조금 참고해서 보시면 좋을 것 같습니다. 
 
