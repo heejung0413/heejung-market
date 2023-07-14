@@ -14,7 +14,8 @@
     <img src="https://img.shields.io/badge/-HTML-05122A?style=flat&logo=HTML5"/>
   <br/>
   <br/>
-  <img src="<img src="https://github.com/heejung0413/heejung-market/blob/main/demo/market-gif.gif?raw=true"/>
+  <img src="https://github.com/heejung0413/heejung-market/blob/main/demo/market-gif.gif?raw=true"/>
+    
 </p>
 
 ## Overview ⭐️
